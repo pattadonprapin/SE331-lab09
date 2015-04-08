@@ -32,6 +32,11 @@ public class DbProductDao implements ProductDao{
     }
 
     @Override
+    public List<Product> getProductsByName(String name) {
+        return productRepository.findByNameLike(name);
+    }
+
+    @Override
     public Product getProduct(Long id) {
         return productRepository.findOne(id);
     }
